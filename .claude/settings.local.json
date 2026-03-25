@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"C:\\\\Users\\\\admin\\\\saas\\\\web\\\\assets\\\\docs\"/*.pdf)",
+      "Bash(vercel --version)",
+      "Bash(npm install:*)",
+      "Bash(vercel --yes)",
+      "Bash(git --version)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git config:*)",
+      "Bash(git commit -m \"Initial commit: HR professional portfolio website:*)",
+      "Bash(git remote:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(gh --version)",
+      "Bash(git commit -m \"Update design to dark theme with green accent:*)",
+      "Bash(git commit -m \"Redesign website with GSAP-inspired dark theme:*)"
+    ]
+  }
+}

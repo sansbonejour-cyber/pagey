@@ -7,7 +7,7 @@
     <title>关于我 - HR专业人士作品集</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,22 +22,45 @@
                 <li class="nav__item"><a href="index.html" class="nav__link nav__link--active">首页</a></li>
                 <li class="nav__item"><a href="resume.html" class="nav__link">简历</a></li>
                 <li class="nav__item"><a href="docs.html" class="nav__link">文档</a></li>
+                <li class="nav__item"><a href="mailto:your.email@example.com" class="btn btn--primary btn--pill btn--small">联系我</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <main class="hero" id="main-content">
+        <!-- Decorative Elements -->
+        <div class="hero__decoration">
+            <!-- Star decoration -->
+            <svg class="hero__star hero__star--1" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 5L61 39L97 39L68 60L79 94L50 73L21 94L32 60L3 39L39 39L50 5Z" fill="#9C27B0" fill-opacity="0.8"/>
+            </svg>
+            <!-- Lightning decoration -->
+            <svg class="hero__lightning hero__lightning--1" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M55 0L20 50H50L35 100L80 40H50L65 0H55Z" fill="#4CAF50" fill-opacity="0.9"/>
+            </svg>
+            <!-- Circle decoration -->
+            <svg class="hero__circle hero__circle--1" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="40" fill="#FF9800" fill-opacity="0.6"/>
+            </svg>
+            <!-- Small star -->
+            <svg class="hero__star hero__star--2" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M30 3L38 23L58 23L42 36L48 56L30 44L12 56L18 36L2 23L22 23L30 3Z" fill="#E91E63" fill-opacity="0.7"/>
+            </svg>
+        </div>
+
         <div class="hero__container">
             <div class="hero__content">
-                <h1 class="hero__title">您的姓名</h1>
-                <p class="hero__subtitle">资深人力资源专家 | 人才招聘专家</p>
+                <h1 class="hero__title">
+                    <span class="hero__title-line">您的姓名</span>
+                </h1>
+                <p class="hero__subtitle">资深人力资源专家 · 人才招聘专家</p>
                 <p class="hero__description">
                     热衷于连接人才与机会。专注于招聘策略、员工发展和组织文化建设。
                 </p>
                 <div class="hero__actions">
-                    <a href="resume.html" class="btn btn--primary">查看简历</a>
-                    <a href="docs.html" class="btn btn--secondary">浏览文档</a>
+                    <a href="resume.html" class="btn btn--primary btn--pill">查看简历</a>
+                    <a href="docs.html" class="btn btn--secondary btn--pill">浏览文档</a>
                 </div>
             </div>
             <div class="hero__contact">
