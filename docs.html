@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="文档库和资源，包括证书、作品集和专业出版物">
+    <title>文档 - HR专业人士作品集</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Skip Navigation Link for Accessibility -->
+    <a href="#main-content" class="skip-link">跳转到主要内容</a>
+
+    <!-- Navigation -->
+    <nav class="nav" aria-label="主导航">
+        <div class="nav__container">
+            <a href="index.html" class="nav__logo">您的姓名</a>
+            <ul class="nav__menu">
+                <li class="nav__item"><a href="index.html" class="nav__link">首页</a></li>
+                <li class="nav__item"><a href="resume.html" class="nav__link">简历</a></li>
+                <li class="nav__item"><a href="docs.html" class="nav__link nav__link--active">文档</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="docs" id="main-content">
+        <div class="docs__container">
+            <h1 class="docs__title">文档资料</h1>
+            <p class="docs__subtitle">浏览和下载专业文档和资源</p>
+
+            <!-- Certificates -->
+            <section class="docs__category">
+                <h2 class="docs__category-title">证书</h2>
+
+                <article class="doc-card">
+                    <div class="doc-card__content">
+                        <h3 class="doc-card__title">SHRM 认证专业人士</h3>
+                        <p class="doc-card__description">人力资源管理协会认证</p>
+                        <p class="doc-card__date">上传时间：2024年3月</p>
+                    </div>
+                    <div class="doc-card__actions">
+                        <button class="btn btn--small" data-preview="assets/docs/shrm_cp_certificate.pdf" aria-label="预览 SHRM 认证证书">预览</button>
+                        <a href="assets/docs/shrm_cp_certificate.pdf" class="btn btn--small btn--outline" download>下载</a>
+                    </div>
+                </article>
+
+                <article class="doc-card">
+                    <div class="doc-card__content">
+                        <h3 class="doc-card__title">人力资源管理证书</h3>
+                        <p class="doc-card__description">高级人力资源管理专业证书</p>
+                        <p class="doc-card__date">上传时间：2023年1月</p>
+                    </div>
+                    <div class="doc-card__actions">
+                        <button class="btn btn--small" data-preview="assets/docs/hr_management_cert.pdf" aria-label="预览人力资源管理证书">预览</button>
+                        <a href="assets/docs/hr_management_cert.pdf" class="btn btn--small btn--outline" download>下载</a>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Portfolio -->
+            <section class="docs__category">
+                <h2 class="docs__category-title">作品集</h2>
+
+                <article class="doc-card">
+                    <div class="doc-card__content">
+                        <h3 class="doc-card__title">招聘策略案例研究</h3>
+                        <p class="doc-card__description">招聘流程的分析与优化</p>
+                        <p class="doc-card__date">上传时间：2024年2月</p>
+                    </div>
+                    <div class="doc-card__actions">
+                        <button class="btn btn--small" data-preview="assets/docs/recruitment_case_study.pdf" aria-label="预览招聘策略案例研究">预览</button>
+                        <a href="assets/docs/recruitment_case_study.pdf" class="btn btn--small btn--outline" download>下载</a>
+                    </div>
+                </article>
+
+                <article class="doc-card">
+                    <div class="doc-card__content">
+                        <h3 class="doc-card__title">员工敬业度报告</h3>
+                        <p class="doc-card__description">年度员工敬业度调查分析</p>
+                        <p class="doc-card__date">上传时间：2023年12月</p>
+                    </div>
+                    <div class="doc-card__actions">
+                        <button class="btn btn--small" data-preview="assets/docs/engagement_report_2023.pdf" aria-label="预览员工敬业度报告 2023">预览</button>
+                        <a href="assets/docs/engagement_report_2023.pdf" class="btn btn--small btn--outline" download>下载</a>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Reports -->
+            <section class="docs__category">
+                <h2 class="docs__category-title">报告与出版物</h2>
+
+                <article class="doc-card">
+                    <div class="doc-card__content">
+                        <h3 class="doc-card__title">人才留存最佳实践</h3>
+                        <p class="doc-card__description">人才留存策略的行业研究</p>
+                        <p class="doc-card__date">上传时间：2023年11月</p>
+                    </div>
+                    <div class="doc-card__actions">
+                        <button class="btn btn--small" data-preview="assets/docs/talent_retention_practices.pdf" aria-label="预览人才留存最佳实践文档">预览</button>
+                        <a href="assets/docs/talent_retention_practices.pdf" class="btn btn--small btn--outline" download>下载</a>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <!-- Preview Modal -->
+    <div class="modal" id="previewModal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content">
+            <button class="modal__close" data-close-modal aria-label="关闭预览">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <iframe class="modal__iframe" src="" title="文档预览"></iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <p class="footer__text">&copy; 2025 您的姓名. 版权所有.</p>
+            <div class="footer__links">
+                <a href="mailto:your.email@example.com" class="footer__link">邮箱</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" class="footer__link">领英</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

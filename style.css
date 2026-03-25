@@ -1,0 +1,787 @@
+/* ============================================
+   CSS Reset & Base Styles
+   ============================================ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Colors */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-gray-50: #fafafa;
+    --color-gray-100: #f5f5f5;
+    --color-gray-200: #e5e5e5;
+    --color-gray-300: #d4d4d4;
+    --color-gray-400: #a3a3a3;
+    --color-gray-500: #737373;
+    --color-gray-600: #525252;
+    --color-gray-700: #404040;
+    --color-gray-800: #262626;
+    --color-gray-900: #171717;
+
+    /* Primary color - low saturation blue */
+    --color-primary: #4a6fa5;
+    --color-primary-dark: #3d5a87;
+    --color-primary-light: #5a7fb5;
+
+    /* Secondary color - low saturation green */
+    --color-secondary: #6b9080;
+    --color-secondary-dark: #567566;
+    --color-secondary-light: #7da894;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+
+    /* Typography */
+    --font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-4xl: 2.5rem;
+
+    /* Layout */
+    --max-width: 1200px;
+    --border-radius: 8px;
+    --transition: 0.2s ease;
+
+    /* Z-index layers */
+    --z-nav: 100;
+    --z-modal: 1000;
+    --z-skip-link: 200;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--color-gray-800);
+    background-color: var(--color-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: var(--font-size-4xl); }
+h2 { font-size: var(--font-size-3xl); }
+h3 { font-size: var(--font-size-2xl); }
+h4 { font-size: var(--font-size-xl); }
+h5 { font-size: var(--font-size-lg); }
+h6 { font-size: var(--font-size-base); }
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+}
+
+/* ============================================
+   Navigation
+   ============================================ */
+
+.nav {
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-gray-200);
+    position: sticky;
+    top: 0;
+    z-index: var(--z-nav);
+}
+
+.nav__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+}
+
+.nav__logo {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-gray-900);
+}
+
+.nav__menu {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-xl);
+}
+
+.nav__item {
+    display: inline-block;
+}
+
+.nav__link {
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    color: var(--color-gray-600);
+    padding: var(--spacing-sm) 0;
+    border-bottom: 2px solid transparent;
+    transition: all var(--transition);
+}
+
+.nav__link:hover,
+.nav__link--active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition);
+    text-decoration: none;
+}
+
+.btn--primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn--primary:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.btn--secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
+.btn--secondary:hover {
+    background-color: var(--color-secondary-dark);
+}
+
+.btn--outline {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+
+.btn--outline:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn--small {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-size-sm);
+}
+
+/* ============================================
+   Hero Section (Index)
+   ============================================ */
+
+.hero {
+    min-height: calc(100vh - 64px);
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+}
+
+.hero__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-3xl) var(--spacing-lg);
+}
+
+.hero__content {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.hero__title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-sm);
+}
+
+.hero__subtitle {
+    font-size: var(--font-size-xl);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.hero__description {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-600);
+    max-width: 600px;
+    margin-bottom: var(--spacing-xl);
+}
+
+.hero__actions {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.hero__contact {
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid var(--color-gray-200);
+}
+
+.hero__contact-item {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-sm);
+}
+
+.hero__contact-item a {
+    color: var(--color-primary);
+}
+
+/* ============================================
+   Resume Page
+   ============================================ */
+
+.resume {
+    background-color: var(--color-gray-50);
+    min-height: calc(100vh - 64px);
+}
+
+.resume__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-3xl) var(--spacing-lg);
+}
+
+.resume__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-3xl);
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.resume__title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+}
+
+.resume__section {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.resume__section-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--color-gray-200);
+}
+
+.resume__item {
+    background-color: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.resume__item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-sm);
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.resume__item-title {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.resume__item-date {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+    font-weight: 500;
+}
+
+.resume__item-company {
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-md);
+}
+
+.resume__item-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.resume__item-list li {
+    position: relative;
+    padding-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-gray-700);
+}
+
+.resume__item-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* ============================================
+   Skills Tags
+   ============================================ */
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.skills__tag {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 20px;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+/* ============================================
+   Documents Page
+   ============================================ */
+
+.docs {
+    background-color: var(--color-gray-50);
+    min-height: calc(100vh - 64px);
+}
+
+.docs__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-3xl) var(--spacing-lg);
+}
+
+.docs__title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.docs__subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-3xl);
+}
+
+.docs__category {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.docs__category-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* ============================================
+   Document Card
+   ============================================ */
+
+.doc-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.doc-card__content {
+    flex: 1;
+    min-width: 200px;
+}
+
+.doc-card__title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.doc-card__description {
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-sm);
+}
+
+.doc-card__date {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+}
+
+.doc-card__actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+/* ============================================
+   Modal (Document Preview)
+   ============================================ */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: var(--z-modal);
+}
+
+.modal--active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__content {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    height: 80vh;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.modal__close {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-300);
+    border-radius: 50%;
+    font-size: var(--font-size-2xl);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+}
+
+.modal__close:hover {
+    background-color: var(--color-gray-100);
+}
+
+.modal__iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 768px) {
+    :root {
+        --font-size-4xl: 2rem;
+        --font-size-3xl: 1.75rem;
+        --font-size-2xl: 1.25rem;
+    }
+
+    .nav__container {
+        height: auto;
+        padding: var(--spacing-md) var(--spacing-md);
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .nav__menu {
+        width: 100%;
+        justify-content: center;
+        gap: var(--spacing-md);
+    }
+
+    .hero__container,
+    .resume__container,
+    .docs__container {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .hero__title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .hero__actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .resume__header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .resume__item {
+        padding: var(--spacing-md);
+    }
+
+    .resume__item-header {
+        flex-direction: column;
+    }
+
+    .doc-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .doc-card__actions {
+        width: 100%;
+        justify-content: stretch;
+    }
+
+    .doc-card__actions .btn {
+        flex: 1;
+    }
+
+    .modal__content {
+        width: 95%;
+        height: 90vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav__menu {
+        gap: var(--spacing-sm);
+    }
+
+    .nav__link {
+        font-size: var(--font-size-sm);
+    }
+
+    .skills__tag {
+        font-size: var(--font-size-xs);
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+}
+
+/* ============================================
+   Accessibility
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-decoration: none;
+    z-index: var(--z-skip-link);
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+.footer {
+    background-color: var(--color-gray-900);
+    color: var(--color-gray-300);
+    padding: var(--spacing-xl) 0;
+    margin-top: var(--spacing-3xl);
+}
+
+.footer__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.footer__text {
+    margin: 0;
+    font-size: var(--font-size-sm);
+}
+
+.footer__links {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.footer__link {
+    color: var(--color-gray-300);
+    font-size: var(--font-size-sm);
+    transition: color var(--transition);
+}
+
+.footer__link:hover {
+    color: var(--color-white);
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+    .nav,
+    .footer,
+    .btn,
+    .hero__actions,
+    .resume__header .btn,
+    .doc-card__actions,
+    .modal {
+        display: none !important;
+    }
+
+    body {
+        background-color: var(--color-white);
+        color: var(--color-black);
+    }
+
+    .hero {
+        background: none;
+        min-height: auto;
+    }
+
+    .hero__container {
+        padding: var(--spacing-md);
+    }
+
+    .resume__container,
+    .docs__container {
+        padding: var(--spacing-md);
+    }
+
+    .resume__item,
+    .doc-card {
+        box-shadow: none;
+        border: 1px solid var(--color-gray-300);
+        page-break-inside: avoid;
+    }
+
+    .resume__section {
+        page-break-before: avoid;
+    }
+
+    a {
+        color: var(--color-black);
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: var(--font-size-xs);
+    }
+
+    a[href^="#"]:after,
+    a[href^="mailto:"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+}
+
+/* ============================================
+   Footer Responsive Design
+   ============================================ */
+
+@media (max-width: 768px) {
+    .footer__container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
