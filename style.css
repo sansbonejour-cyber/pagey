@@ -293,9 +293,15 @@ a:hover {
     font-weight: 900;
     color: var(--color-cream);
     margin-bottom: var(--spacing-md);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+    line-height: 0.9;
+    letter-spacing: 0.05em;
     position: relative;
+    text-transform: uppercase;
+}
+
+.hero__title-line {
+    display: inline-block;
+    transform: scaleY(1.15);
 }
 
 .hero__subtitle {

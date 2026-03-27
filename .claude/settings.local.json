@@ -16,7 +16,8 @@
       "Bash(gh --version)",
       "Bash(git commit -m \"Update design to dark theme with green accent:*)",
       "Bash(git commit -m \"Redesign website with GSAP-inspired dark theme:*)",
-      "Bash(git commit -m \"Update nav logo to ''Resume'' with stretched typography:*)"
+      "Bash(git commit -m \"Update nav logo to ''Resume'' with stretched typography:*)",
+      "Bash(git commit -m \"Change hero title to ''Resume'' with stretched vertical design:*)"
     ]
   }
 }
